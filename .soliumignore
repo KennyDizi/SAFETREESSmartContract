@@ -1,2 +1,2 @@
 node_modules
-contracts/Migrations.sol
+src/contracts/Migrations.sol
