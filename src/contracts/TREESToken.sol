@@ -34,15 +34,15 @@ contract TREESToken is ERC721,
 
     Counters.Counter private _tokenIdTracker;
 
-    constructor(uint _endMonths) ERC721(TOKEN_NAME, TOKEN_SYMBOL) {
+    constructor(uint endMonths) ERC721(TOKEN_NAME, TOKEN_SYMBOL) {
             challengeStartTime = block.timestamp;
-            challengeEndTime = BokkyPooBahsDateTimeLibrary.addMonths(challengeStartTime, _endMonths);
+            challengeEndTime = BokkyPooBahsDateTimeLibrary.addMonths(challengeStartTime, endMonths);
 
             // setup role
             _setupRole(DEFAULT_ADMIN_ROLE, _msgSender());
             _setupRole(MINTER_ROLE, _msgSender());
             _setupRole(PAUSER_ROLE, _msgSender());
-    }   
+    }
 
     /**
      * @dev Creates a new token for `to`. Its token ID will be automatically
