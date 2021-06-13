@@ -13,6 +13,14 @@ import "./TREESTokenConfig.sol";
 // ----------------------------------------------------------------------------
 
 contract TREESToken is ERC721, TREESTokenConfig {
-    constructor() ERC721(TOKEN_NAME, TOKEN_SYMBOL) {
+    // Properties
+    uint256 public challengeEndTime;
+    uint256 public challengeStartTime;
+
+    constructor() ERC721(TOKEN_NAME,
+        TOKEN_SYMBOL,
+        uint256 _challengeEndTime) {
+            challengeStartTime = 
+            challengeEndTime = _challengeEndTime;
     }
 }
