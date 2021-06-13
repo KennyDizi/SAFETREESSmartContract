@@ -7,10 +7,10 @@
   "author": "kenny_dizi <chitrung09t2@gmail.com>",
   "license": "MIT",
   "directories": {
-    "test": "src/test"
+    "test": "test"
   },
   "scripts": {
-    "lint": "solium -d src/contracts/ --fix",
+    "lint": "solium -d contracts/ --fix",
     "compile": "truffle compile",
     "build": "truffle build",
     "test": "truffle test",
