@@ -8,7 +8,7 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Burnable.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Pausable.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "./TREESTokenConfig.sol";
-import "../utils/BokkyPooBahsDateTimeLibrary.sol";
+import "./utils/BokkyPooBahsDateTimeLibrary.sol";
 
 // ----------------------------------------------------------------------------
 // TREESToken - TREES Token Contract
