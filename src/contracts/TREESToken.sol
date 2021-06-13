@@ -3,7 +3,7 @@ pragma solidity ^0.8.5;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "./TREESTokenConfig.sol";
-import "../utils/BokkyPooBahsDateTimeLibrary.sol"
+import "../utils/BokkyPooBahsDateTimeLibrary.sol";
 
 // ----------------------------------------------------------------------------
 // TREESToken - TREES Token Contract
