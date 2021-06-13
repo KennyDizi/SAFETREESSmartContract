@@ -14,7 +14,7 @@
     "compile": "truffle compile",
     "build": "truffle build",
     "test": "truffle test",
-    "beforePublish": "truffle compile && node dist.js"
+    "before_publish": "truffle compile && node dist.js"
   },
   "devDependencies": {
     "@specron/cli": "0.17.3",
