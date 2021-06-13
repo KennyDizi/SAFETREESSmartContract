@@ -10,7 +10,7 @@
     "test": "test"
   },
   "scripts": {
-    "lint": "solium -d contracts/ --fix",
+    "lint": "solium -d src/contracts/ --fix",
     "compile": "truffle compile",
     "build": "truffle build",
     "test": "truffle test",
