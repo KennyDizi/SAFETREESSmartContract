@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.4;
 
 // ----------------------------------------------------------------------------
@@ -6,7 +7,6 @@ pragma solidity ^0.8.4;
 // Copyright (c) 2021 SAFE TREES.
 // https://safetrees.space/
 //
-// The MIT Licence.
 // ----------------------------------------------------------------------------
 
 contract TREESTokenConfig {
