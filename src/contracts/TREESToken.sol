@@ -112,4 +112,14 @@ contract TREESToken is ERC721,
     {
         return super.supportsInterface(interfaceId);
     }
+
+    // TODO
+    /**
+     * @dev check challenge is completed.
+     *
+     * check the contract must not be paused, current date is less than expiry date or sold total presale token
+     */
+    function isChallengeCompleted() whenNotPaused public returns (bool) {
+        return false; 
+    }
 }
