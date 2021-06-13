@@ -2,7 +2,7 @@
 pragma solidity ^0.8.5;
 
 // ----------------------------------------------------------------------------
-// TREESTokenConfig - TREES Token Configuration 
+// TREESTokenConfig - TREES Token Configuration
 //
 // Copyright (c) 2021 SAFE TREES.
 // https://safetrees.space/

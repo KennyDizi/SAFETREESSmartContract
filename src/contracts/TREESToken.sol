@@ -35,13 +35,13 @@ contract TREESToken is ERC721,
     Counters.Counter private _tokenIdTracker;
 
     constructor(uint endMonths) ERC721(TOKEN_NAME, TOKEN_SYMBOL) {
-            challengeStartTime = block.timestamp;
-            challengeEndTime = BokkyPooBahsDateTimeLibrary.addMonths(challengeStartTime, endMonths);
+        challengeStartTime = block.timestamp;
+        challengeEndTime = BokkyPooBahsDateTimeLibrary.addMonths(challengeStartTime, endMonths);
 
-            // setup role
-            _setupRole(DEFAULT_ADMIN_ROLE, _msgSender());
-            _setupRole(MINTER_ROLE, _msgSender());
-            _setupRole(PAUSER_ROLE, _msgSender());
+        // setup role
+        _setupRole(DEFAULT_ADMIN_ROLE, _msgSender());
+        _setupRole(MINTER_ROLE, _msgSender());
+        _setupRole(PAUSER_ROLE, _msgSender());
     }
 
     /**
@@ -116,10 +116,11 @@ contract TREESToken is ERC721,
     // TODO
     /**
      * @dev check challenge is completed.
+     * read more at: https://medium.com/coinmonks/testing-time-dependent-logic-in-ethereum-smart-contracts-1b24845c7f72
      *
      * check the contract must not be paused, current date is less than expiry date or sold total presale token
      */
-    function isChallengeCompleted() whenNotPaused public returns (bool) {
-        return false; 
+    function hasClosed() whenNotPaused public view returns (bool) {
+        return false;
     }
 }
