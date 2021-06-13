@@ -10,9 +10,9 @@ pragma solidity ^0.8.5;
 // ----------------------------------------------------------------------------
 
 contract TREESTokenConfig {
-    string public constant NAME = "SAFETREES Chain Token";
-    string public constant SYMBOL = "TREES";
+    string public constant TOKEN_NAME = "SAFETREES Chain Token";
+    string public constant TOKEN_SYMBOL = "TREES";
     uint8 public constant DECIMALS = 18;
     uint public constant DECIMALSFACTOR = 10 ** uint(DECIMALS);
-    uint public constant TOTALSUPPLY = 500000000 * DECIMALSFACTOR;
+    uint public constant TOKEN_TOTALSUPPLY = 500000000 * DECIMALSFACTOR;
 }
