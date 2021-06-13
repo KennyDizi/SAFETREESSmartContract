@@ -17,10 +17,8 @@ contract TREESToken is ERC721, TREESTokenConfig {
     uint256 public challengeEndTime;
     uint256 public challengeStartTime;
 
-    constructor() ERC721(TOKEN_NAME,
-        TOKEN_SYMBOL,
-        uint256 _challengeEndTime) {
-            challengeStartTime = 
+    constructor(uint256 _challengeEndTime) ERC721(TOKEN_NAME, TOKEN_SYMBOL) {
+            challengeStartTime = block.timestamp;
             challengeEndTime = _challengeEndTime;
     }
 }
