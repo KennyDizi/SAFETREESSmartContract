@@ -3,7 +3,7 @@
 const TREESToken = artifacts.require("TREESToken");
 
 module.exports = function(deployer) {
-  deployer.deploy(TREESToken, "SAFETREES Chain Token","TREES", "https://my-json-server/samplenft/tokens/");
+  deployer.deploy(TREESToken, 48);
 };
 
 /* local deployment result
