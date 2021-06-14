@@ -13,6 +13,7 @@
     "lint": "solium -d contracts/ --fix",
     "compile": "truffle compile",
     "migrate": "truffle migrate",
+    "local_deploy": "truffle develop",
     "build": "truffle build",
     "test": "truffle test",
     "before_publish": "truffle compile && node dist.js"
