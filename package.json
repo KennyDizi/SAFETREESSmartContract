@@ -13,6 +13,7 @@
     "lint": "solium -d contracts/ --fix",
     "compile": "truffle compile",
     "migrate": "truffle migrate",
+    "migrate_reset": "truffle migrate --reset", 
     "local_deploy": "truffle develop",
     "build": "truffle build",
     "test": "truffle test",
