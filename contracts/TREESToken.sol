@@ -26,19 +26,31 @@ contract TREESToken is ERC721,
     ERC721Pausable {
     using Counters for Counters.Counter;
 
-    uint256 public challengeEndTime;
-    uint256 public challengeStartTime;
+    uint256 public _challengeEndTime;
+    uint256 public _challengeStartTime;
 
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
     bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
 
     Counters.Counter private _tokenIdTracker;
 
-    constructor(uint endMonths) ERC721(TOKEN_NAME, TOKEN_SYMBOL) {
-        challengeStartTime = block.timestamp;
-        challengeEndTime = BokkyPooBahsDateTimeLibrary.addMonths(challengeStartTime, endMonths);
+    struct TreeMetadata {
+        bytes16 tree_longitue;
+        bytes16 tree_latitude;
+        uint16 tree_type;
+        bytes16 tree_height;        
+    }
 
-        // setup role
+    mapping(uint256 => string) _tokenLinks;
+
+    // read more @ https://github.com/kiecodes/nft/blob/master/contracts/Date.sol
+    // https://github.com/abdk-consulting/abdk-libraries-solidity
+
+    constructor(uint endMonths) ERC721(TOKEN_NAME, TOKEN_SYMBOL) {
+        _challengeStartTime = block.timestamp;
+        _challengeEndTime = BokkyPooBahsDateTimeLibrary.addMonths(_challengeStartTime, endMonths);
+
+        // setup roles
         _setupRole(DEFAULT_ADMIN_ROLE, _msgSender());
         _setupRole(MINTER_ROLE, _msgSender());
         _setupRole(PAUSER_ROLE, _msgSender());
@@ -55,12 +67,18 @@ contract TREESToken is ERC721,
      *
      * - the caller must have the `MINTER_ROLE`.
      */
-    function mint(address to) public virtual {
+    function mint(address to, string memory tokenLink) public virtual {
         require(hasRole(MINTER_ROLE, _msgSender()), "TREESToken: must have minter role to mint");
 
         // We cannot just use balanceOf to create the new tokenId because tokens
         // can be burned (destroyed), so we need a separate counter.
-        _mint(to, _tokenIdTracker.current());
+        uint256 generatedTokenId = _tokenIdTracker.current();
+        _mint(to, generatedTokenId);
+
+        // link to the meta data of token ID
+        _tokenLinks[generatedTokenId] = tokenLink;
+
+        // increase token id
         _tokenIdTracker.increment();
     }
 
