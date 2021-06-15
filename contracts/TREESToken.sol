@@ -141,4 +141,16 @@ contract TREESToken is ERC721,
     function hasClosed() whenNotPaused public view returns (bool) {
         return false;
     }
+
+    /**
+     * @dev return url of token id url meta data
+    * Requirements:
+     *
+     * - `tokenId` must exist.
+     *
+     */
+    function getTokenLink(uint256 tokenId) public view returns (string memory link) {
+        require(_exists(tokenId), "ERC721: operator query for nonexistent token");
+        return _tokenLinks[tokenId];
+    }
 }
