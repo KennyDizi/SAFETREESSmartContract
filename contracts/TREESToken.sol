@@ -150,7 +150,7 @@ contract TREESToken is ERC721,
      *
      */
     function getTokenLink(uint256 tokenId) public view returns (string memory link) {
-        require(_exists(tokenId), "ERC721: operator query for nonexistent token");
+        require(_exists(tokenId), "TREESToken: operator query for nonexistent token");
         return _tokenLinks[tokenId];
     }
 }
