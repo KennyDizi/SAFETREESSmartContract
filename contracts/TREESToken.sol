@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.5;
+pragma solidity ^0.8.7;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/access/AccessControlEnumerable.sol";
@@ -38,7 +38,7 @@ contract TREESToken is ERC721,
         bytes16 tree_longitue;
         bytes16 tree_latitude;
         uint16 tree_type;
-        bytes16 tree_height;        
+        bytes16 tree_height;
     }
 
     mapping(uint256 => string) _tokenLinks;
