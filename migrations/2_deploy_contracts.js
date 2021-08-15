@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: MIT
 const TREESToken = artifacts.require("TREESToken");
 
-module.exports = function(deployer) {
-  deployer.deploy(TREESToken, 48);
+module.exports = async function(deployer) {
+  await deployer.deploy(TREESToken, 48);
 };
 
 /* local deployment result
