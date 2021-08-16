@@ -1,7 +1,7 @@
 {
   "name": "trees-token-smart-contract",
-  "version": "1.0.0",
-  "description": "TREES Token Smart Contract",
+  "version": "1.0.1",
+  "description": "SAFETREES Non-Fungible Token Smart Contract",
   "main": "index.js",
   "repository": "https://github.com/KennyDizi/TreesChain.git",
   "author": "kenny_dizi <chitrung09t2@gmail.com>",
