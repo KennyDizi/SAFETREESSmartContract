@@ -13,7 +13,7 @@ import "./utils/BokkyPooBahsDateTimeLibrary.sol";
 // ----------------------------------------------------------------------------
 // TREESToken - TREES Token Contract
 //
-// Copyright (c) 2021 SAFE TREES.
+// Copyright (c) 2021 SAFETREES.
 // https://safetrees.space/
 //
 // ----------------------------------------------------------------------------

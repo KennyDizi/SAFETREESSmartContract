@@ -1,6 +1,14 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.7;
 
+// ----------------------------------------------------------------------------
+// Migrations - TREES Token Migrations
+//
+// Copyright (c) 2021 SAFETREES.
+// https://safetrees.space/
+//
+// ----------------------------------------------------------------------------
+
 abstract contract Migrations {
   address public owner;
   uint public last_completed_migration;
