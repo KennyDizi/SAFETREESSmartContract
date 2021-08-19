@@ -8,7 +8,6 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Burnable.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Pausable.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "./TREESTokenConfig.sol";
-import "./utils/BokkyPooBahsDateTimeLibrary.sol";
 
 // ----------------------------------------------------------------------------
 // TREESToken - TREES Token Contract
@@ -25,9 +24,6 @@ contract TREESToken is ERC721,
     ERC721Burnable,
     ERC721Pausable {
     using Counters for Counters.Counter;
-
-    uint256 public _challengeEndTime;
-    uint256 public _challengeStartTime;
 
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
     bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
@@ -46,10 +42,7 @@ contract TREESToken is ERC721,
     // read more @ https://github.com/kiecodes/nft/blob/master/contracts/Date.sol
     // https://github.com/abdk-consulting/abdk-libraries-solidity
 
-    constructor(uint endMonths) ERC721(TOKEN_NAME, TOKEN_SYMBOL) {
-        _challengeStartTime = block.timestamp;
-        _challengeEndTime = BokkyPooBahsDateTimeLibrary.addMonths(_challengeStartTime, endMonths);
-
+    constructor() ERC721(TOKEN_NAME, TOKEN_SYMBOL) {
         // setup roles
         _setupRole(DEFAULT_ADMIN_ROLE, _msgSender());
         _setupRole(MINTER_ROLE, _msgSender());
@@ -131,17 +124,6 @@ contract TREESToken is ERC721,
         return super.supportsInterface(interfaceId);
     }
 
-    // TODO
-    /**
-     * @dev check challenge is completed.
-     * read more at: https://medium.com/coinmonks/testing-time-dependent-logic-in-ethereum-smart-contracts-1b24845c7f72
-     *
-     * check the contract must not be paused, current date is less than expiry date or sold total presale token
-     */
-    function hasClosed() whenNotPaused public view returns (bool) {
-        return false;
-    }
-
     /**
      * @dev return url of token id url meta data
     * Requirements:
@@ -152,5 +134,10 @@ contract TREESToken is ERC721,
     function getTokenLink(uint256 tokenId) public view returns (string memory link) {
         require(_exists(tokenId), "TREESToken: operator query for nonexistent token");
         return _tokenLinks[tokenId];
+    }
+
+    function getTotalSupply() public view returns (uint256) {
+        require(hasRole(DEFAULT_ADMIN_ROLE, _msgSender()), "TREESToken: you must be ADMIN to use this function.");
+        return _tokenIdTracker.current();
     }
 }
