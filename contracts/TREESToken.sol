@@ -136,6 +136,9 @@ contract TREESToken is ERC721,
         return _tokenLinks[tokenId];
     }
 
+    /**
+     * @dev return currentle number of token issued
+     */
     function getTotalSupply() public view returns (uint256) {
         require(hasRole(DEFAULT_ADMIN_ROLE, _msgSender()), "TREESToken: you must be ADMIN to use this function.");
         return _tokenIdTracker.current();
