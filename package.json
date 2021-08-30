@@ -5,7 +5,8 @@
   "main": "index.js",
   "repository": "https://github.com/KennyDizi/TreesChain.git",
   "author": "kenny_dizi <chitrung09t2@gmail.com>",
-  "license": "MIT",
+  "license": "Copyright @2021 SAFETREES",
+  "private": true,
   "directories": {
     "test": "test"
   },
@@ -27,7 +28,7 @@
     "@truffle/preserve-to-buckets": "^0.2.4",
     "@types/chai": "^4.2.21",
     "@types/mocha": "^9.0.0",
-    "@types/node": "16.7.5",
+    "@types/node": "16.7.6",
     "chai": "^4.3.4",
     "chai-string": "^1.5.0",
     "ethlint": "^1.2.5",
